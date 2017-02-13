@@ -4,8 +4,12 @@
   "description": "Javascript implementation of simple ciphers",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --reporter spec"
   },
   "author": "Sheharyar Naseer <hello@sheharyar.me> (https://sheharyar.me/)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
 }
