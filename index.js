@@ -8,6 +8,7 @@
 
 const ASCII_DIFF = 65;
 
+
 /**
  * Converts a number in the 0-25 range into
  * an A-Z character
@@ -17,6 +18,17 @@ const ASCII_DIFF = 65;
  */
 const numToChar = (num) => {
   return String.fromCharCode(num + ASCII_DIFF);
+};
+
+
+/**
+ * Converts an array of 0-25 numbers into a String
+ *
+ * @param  {array} array
+ * @return {string}
+ */
+const numArrayToString = (array) => {
+  return array.map(numToChar).join('');
 };
 
 
@@ -52,8 +64,9 @@ const Caesar = {
 module.exports = {
   Substitution: Caesar,
   utils: {
-    numToChar: numToChar,
-    charToNum: charToNum
+    numToChar:        numToChar,
+    charToNum:        charToNum,
+    numArrayToString: numArrayToString
   }
 };
 
