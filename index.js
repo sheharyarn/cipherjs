@@ -44,6 +44,17 @@ const charToNum = (char) => {
 }
 
 
+/**
+ * Converts a String into an array of 0-25 numbers
+ *
+ * @param  {string} string
+ * @return {array}
+ */
+const stringToNumArray = (string) => {
+  return string.split('').map(charToNum);
+};
+
+
 
 // Main Ciphers
 // ------------
@@ -66,7 +77,8 @@ module.exports = {
   utils: {
     numToChar:        numToChar,
     charToNum:        charToNum,
-    numArrayToString: numArrayToString
+    numArrayToString: numArrayToString,
+    stringToNumArray: stringToNumArray
   }
 };
 
