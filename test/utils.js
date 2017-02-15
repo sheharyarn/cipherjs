@@ -1,7 +1,7 @@
 'use strict';
 
 const should = require('chai').should();
-const utils  = require('../index').utils;
+const utils  = require('../utils');
 
 describe('utils', () => {
 
