@@ -3,7 +3,7 @@
 const should = require('chai').should();
 const utils  = require('../utils');
 
-describe('utils', () => {
+describe('Utility Methods', () => {
 
   describe('#numToChar', () => {
     it('returns correct characters for specific numbers', () => {
@@ -46,6 +46,17 @@ describe('utils', () => {
     it('returns correct number array for string for a-z string', () => {
       utils.stringToNumArray('abcdefghijklmnopqrstuvwxyz')
         .should.eql([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]);
+    });
+  });
+
+
+  describe('#bringInRange', () => {
+    it('mods a given number by 26', () => {
+      utils.bringInRange(10).should.eql(10);
+      utils.bringInRange(25).should.eql(25);
+      utils.bringInRange(26).should.eql(0);
+      utils.bringInRange(27).should.eql(1);
+      utils.bringInRange(53).should.eql(1);
     });
   });
 

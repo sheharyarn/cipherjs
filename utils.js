@@ -4,7 +4,8 @@
 // Utility Methods
 // ---------------
 
-const ASCII_DIFF = 65;
+const ASCII_DIFF   = 65;
+const LETTER_RANGE = 26;
 
 
 /**
@@ -53,6 +54,18 @@ const stringToNumArray = (string) => {
 };
 
 
+/**
+ * Bring a number bigger than the range, back into range
+ *
+ * @param  {number} num
+ * @return {number}
+ */
+const bringInRange = (num) => {
+  return num % LETTER_RANGE;
+}
+
+
+
 
 // Export Modules
 // --------------
@@ -61,6 +74,7 @@ module.exports = {
   numToChar:        numToChar,
   charToNum:        charToNum,
   numArrayToString: numArrayToString,
-  stringToNumArray: stringToNumArray
+  stringToNumArray: stringToNumArray,
+  bringInRange:     bringInRange
 };
 
