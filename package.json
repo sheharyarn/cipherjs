@@ -1,6 +1,6 @@
 {
   "name": "cipherjs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Javascript implementation of simple ciphers",
   "main": "index.js",
   "scripts": {
