@@ -58,6 +58,14 @@ describe('Utility Methods', () => {
       utils.bringInRange(27).should.eql(1);
       utils.bringInRange(53).should.eql(1);
     });
+
+    it('works with negative numbers', () => {
+      utils.bringInRange(-10).should.eql(16);
+      utils.bringInRange(-25).should.eql(1);
+      utils.bringInRange(-26).should.eql(0);
+      utils.bringInRange(-27).should.eql(25);
+      utils.bringInRange(-53).should.eql(25);
+    });
   });
 
 

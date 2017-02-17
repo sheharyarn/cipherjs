@@ -61,7 +61,7 @@ const stringToNumArray = (string) => {
  * @return {number}
  */
 const bringInRange = (num) => {
-  return num % LETTER_RANGE;
+  return ((num % LETTER_RANGE) + LETTER_RANGE) % LETTER_RANGE;
 }
 
 
