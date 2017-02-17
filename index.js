@@ -49,6 +49,6 @@ const Substitution = {
 // --------------
 
 module.exports = {
-  Substitution: Substitution
+  Substitution
 };
 

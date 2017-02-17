@@ -82,11 +82,11 @@ const cleanString = (string) => {
 // --------------
 
 module.exports = {
-  numToChar:        numToChar,
-  charToNum:        charToNum,
-  numArrayToString: numArrayToString,
-  stringToNumArray: stringToNumArray,
-  bringInRange:     bringInRange,
-  cleanString:      cleanString
+  numToChar,
+  charToNum,
+  numArrayToString,
+  stringToNumArray,
+  bringInRange,
+  cleanString
 };
 
