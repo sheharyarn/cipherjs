@@ -24,5 +24,20 @@ describe('Substitution Cipher', () => {
     });
   });
 
+
+  describe('#decrypt', () => {
+    it('correctly decrypts one word texts with key less than 26', () => {
+      Substitution.decrypt('ROVVY', 10).should.eql('HELLO')
+      Substitution.decrypt('BYFFI', 20).should.eql('HELLO')
+    });
+
+    it('works with large keys', () => {
+      Substitution.decrypt('WUYMULWCJBYL', 46).should.eql('CAESARCIPHER')
+    });
+
+    it('works with spaces', () => {
+      Substitution.decrypt('RO VVY', 10).should.eql('HE LLO')
+    });
+  });
 });
 

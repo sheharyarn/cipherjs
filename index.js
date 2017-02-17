@@ -40,6 +40,15 @@ const Substitution = {
    * @return {string} plaintext
    */
   decrypt: (ciphertext, key) => {
+    key = utils.bringInRange(key);
+
+    return ciphertext
+      .replace(/\ +/g, ' ')
+      .split(' ')
+      .map((s)  => utils.stringToNumArray(s))
+      .map((na) => na.map((n) => utils.bringInRange(n - key)))
+      .map((na) => utils.numArrayToString(na))
+      .join(' ');
   }
 };
 
