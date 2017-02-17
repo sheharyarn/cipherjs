@@ -60,5 +60,20 @@ describe('Utility Methods', () => {
     });
   });
 
+
+  describe('#cleanString', () => {
+    it('upcases simple strings', () => {
+      utils.cleanString('hello').should.eql('HELLO');
+    });
+
+    it('does nothing for already upcased strings', () => {
+      utils.cleanString('SOMETHING').should.eql('SOMETHING');
+    });
+
+    it('removes all characters other than alphabets', () => {
+      utils.cleanString('this has w3!4d c#aract3rs').should.eql('THISHASWDCARACTRS');
+    });
+  });
+
 });
 

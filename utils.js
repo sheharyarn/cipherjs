@@ -50,7 +50,7 @@ const charToNum = (char) => {
  * @return {array}
  */
 const stringToNumArray = (string) => {
-  return string.split('').map(charToNum);
+  return cleanString(string).split('').map(charToNum);
 };
 
 
@@ -65,6 +65,17 @@ const bringInRange = (num) => {
 }
 
 
+/**
+ * Upcases a String and removes everything except alphabets
+ *
+ * @param  {string}
+ * @return {string}
+ */
+const cleanString = (string) => {
+  return string.toUpperCase().replace(/[^A-Z]/g, '');
+}
+
+
 
 
 // Export Modules
@@ -75,6 +86,7 @@ module.exports = {
   charToNum:        charToNum,
   numArrayToString: numArrayToString,
   stringToNumArray: stringToNumArray,
-  bringInRange:     bringInRange
+  bringInRange:     bringInRange,
+  cleanString:      cleanString
 };
 
