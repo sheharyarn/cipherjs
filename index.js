@@ -8,7 +8,7 @@ const utils = require('./utils');
 // Main Ciphers
 // ------------
 
-const Substitution = {
+const Caesar = {
 
   /**
    * Encrypts a Plaintext with the given numeric key
@@ -58,6 +58,6 @@ const Substitution = {
 // --------------
 
 module.exports = {
-  Substitution
+  Caesar
 };
 
