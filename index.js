@@ -54,10 +54,35 @@ const Caesar = {
 
 
 
+const Substitution = {
+
+  /**
+   * Encrypts a Plaintext with the given string key
+   * using a simple Substitution Cipher
+   *
+   * @param  {string} plaintext
+   * @param  {string} key
+   * @return {string} ciphertext
+   */
+  encrypt: (plaintext, key) => {
+    const keyMap = utils.getSubstitutionMapFromKey(key);
+
+    return plaintext
+      .replace(/\ +/g, ' ')
+      .split(' ')
+      .map((s)  => utils.stringToNumArray(s))
+      .map((na) => na.map((n) => keyMap[n]))
+      .map((na) => na.join(''))
+      .join(' ');
+  }
+};
+
+
 // Export Modules
 // --------------
 
 module.exports = {
-  Caesar
+  Caesar,
+  Substitution
 };
 
