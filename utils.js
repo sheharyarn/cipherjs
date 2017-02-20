@@ -4,8 +4,10 @@
 // Utility Methods
 // ---------------
 
-const ASCII_DIFF   = 65;
-const LETTER_RANGE = 26;
+const ASCII_DIFF    = 65;
+const LETTER_RANGE  = 26;
+const ALPHABET      = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const ALPHABET_LIST = ALPHABET.split('');
 
 
 /**
@@ -76,6 +78,22 @@ const cleanString = (string) => {
 }
 
 
+/**
+ * Normalizes a user-given key in to a full key for
+ * substitution cipher by removing repeating characters
+ * and containing mappings for all alphabets
+ *
+ * @param  {string}
+ * @return {string}
+ */
+const getSubstitutionMapFromKey = (key) => {
+  const userKey   = [... new Set( cleanString(key).split('') )];
+  const remaining = ALPHABET_LIST.filter((c) => userKey.indexOf(c) == -1);
+
+  return userKey.concat(remaining).join('');
+}
+
+
 
 
 // Export Modules
@@ -87,6 +105,7 @@ module.exports = {
   numArrayToString,
   stringToNumArray,
   bringInRange,
+  getSubstitutionMapFromKey,
   cleanString
 };
 

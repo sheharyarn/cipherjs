@@ -83,5 +83,24 @@ describe('Utility Methods', () => {
     });
   });
 
+
+  describe('#getSubstitutionMapFromKey', () => {
+    it('returns the complete alphabet for empty key', () => {
+      utils.getSubstitutionMapFromKey('').should.eql('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+    });
+
+    it('returns correct mappings for simple keys', () => {
+      utils.getSubstitutionMapFromKey('ZEBRAS').should.eql('ZEBRASCDFGHIJKLMNOPQTUVWXY');
+    });
+
+    it('returns correct mappings for keys with repeated characters', () => {
+      utils.getSubstitutionMapFromKey('HELLOHOWAREYOU').should.eql('HELOWARYUBCDFGIJKMNPQSTVXZ');
+    });
+
+    it('returns correct mappings for keys with special characters', () => {
+      utils.getSubstitutionMapFromKey('Th!5 I5 4 w3!Rd K3y').should.eql('THIWRDKYABCEFGJLMNOPQSUVXZ');
+    });
+  });
+
 });
 
