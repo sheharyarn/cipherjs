@@ -100,6 +100,9 @@ const getSubstitutionMapFromKey = (key) => {
 // --------------
 
 module.exports = {
+  ALPHABET,
+  ALPHABET_LIST,
+
   numToChar,
   charToNum,
   numArrayToString,
