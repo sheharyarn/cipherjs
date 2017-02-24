@@ -95,17 +95,21 @@ const getSubstitutionMapFromKey = (key) => {
 
 
 /**
- * Checks if the passed argument is an Integer,
- * and throws an error if not
+ * Checks if all passed arguments are Integers,
+ * and throws a TypeError if not
  *
  * @param  {any}
  * @return {boolean}
  */
-const validateInteger = (term) => {
-  if (typeof term === 'number' && (term % 1) === 0)
-    return true;
-  else
-    throw new TypeError(`"${term}" is not a valid Integer`);
+const validateIntegers = (t, ...terms) => {
+  const isInteger = (term) => {
+    if (typeof term === 'number' && (term % 1) === 0)
+      return true;
+    else
+      throw new TypeError(`"${term}" is not a valid Integer`);
+  }
+
+  return terms.concat(t).map(isInteger) && true;
 }
 
 
@@ -124,7 +128,7 @@ module.exports = {
   bringInRange,
   getSubstitutionMapFromKey,
 
-  validateInteger,
+  validateIntegers,
   cleanString
 };
 

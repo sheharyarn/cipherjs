@@ -105,20 +105,28 @@ describe('Utility Methods', () => {
 
   describe('#validateInteger', () => {
     it('returns true for valid integers', () => {
-      utils.validateInteger(  0).should.be.true;
-      utils.validateInteger( 17).should.be.true;
-      utils.validateInteger(-20).should.be.true;
-      utils.validateInteger(359).should.be.true;
+      utils.validateIntegers(  0).should.be.true;
+      utils.validateIntegers( 17).should.be.true;
+      utils.validateIntegers(-20).should.be.true;
+      utils.validateIntegers(359).should.be.true;
     });
 
     it('raises error for invalid integers', () => {
-      (() => utils.validateInteger()          ).should.throw(TypeError);
-      (() => utils.validateInteger('')        ).should.throw(TypeError);
-      (() => utils.validateInteger('2')       ).should.throw(TypeError);
-      (() => utils.validateInteger(4.5)       ).should.throw(TypeError);
-      (() => utils.validateInteger(NaN)       ).should.throw(TypeError);
-      (() => utils.validateInteger(null)      ).should.throw(TypeError);
-      (() => utils.validateInteger(undefined) ).should.throw(TypeError);
+      (() => utils.validateIntegers()          ).should.throw(TypeError);
+      (() => utils.validateIntegers('')        ).should.throw(TypeError);
+      (() => utils.validateIntegers('2')       ).should.throw(TypeError);
+      (() => utils.validateIntegers(4.5)       ).should.throw(TypeError);
+      (() => utils.validateIntegers(NaN)       ).should.throw(TypeError);
+      (() => utils.validateIntegers(null)      ).should.throw(TypeError);
+      (() => utils.validateIntegers(undefined) ).should.throw(TypeError);
+    });
+
+    it('works for multiple arguments', () => {
+      utils.validateIntegers(1,2,3).should.be.true;
+      utils.validateIntegers(4,5,6).should.be.true;
+
+      (() => utils.validateIntegers(9, 0, NaN, null)   ).should.throw(TypeError);
+      (() => utils.validateIntegers('', 12, undefined) ).should.throw(TypeError);
     });
   });
 
