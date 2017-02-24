@@ -112,24 +112,46 @@ describe('Utility Methods', () => {
     });
 
     it('raises error for invalid integers', () => {
-      (() => utils.validateIntegers()          ).should.throw(TypeError);
-      (() => utils.validateIntegers('')        ).should.throw(TypeError);
-      (() => utils.validateIntegers('2')       ).should.throw(TypeError);
-      (() => utils.validateIntegers(4.5)       ).should.throw(TypeError);
-      (() => utils.validateIntegers(NaN)       ).should.throw(TypeError);
-      (() => utils.validateIntegers(null)      ).should.throw(TypeError);
-      (() => utils.validateIntegers(undefined) ).should.throw(TypeError);
+      ( () => utils.validateIntegers()          ).should.throw(TypeError);
+      ( () => utils.validateIntegers('')        ).should.throw(TypeError);
+      ( () => utils.validateIntegers('2')       ).should.throw(TypeError);
+      ( () => utils.validateIntegers(4.5)       ).should.throw(TypeError);
+      ( () => utils.validateIntegers(NaN)       ).should.throw(TypeError);
+      ( () => utils.validateIntegers(null)      ).should.throw(TypeError);
+      ( () => utils.validateIntegers(undefined) ).should.throw(TypeError);
     });
 
     it('works for multiple arguments', () => {
       utils.validateIntegers(1,2,3).should.be.true;
       utils.validateIntegers(4,5,6).should.be.true;
 
-      (() => utils.validateIntegers(9, 0, NaN, null)   ).should.throw(TypeError);
-      (() => utils.validateIntegers('', 12, undefined) ).should.throw(TypeError);
+      ( () => utils.validateIntegers(9, 0, NaN, null)   ).should.throw(TypeError);
+      ( () => utils.validateIntegers('', 12, undefined) ).should.throw(TypeError);
     });
   });
 
 
+  describe('#gcd', () => {
+    it('returns correct GCD value for two integers', () => {
+      utils.gcd(1,  100).should.eql(1);
+      utils.gcd(13,  25).should.eql(1);
+      utils.gcd(50,  40).should.eql(10);
+      utils.gcd(105, 35).should.eql(35);
+    });
+
+    it('throws a TypeError if arguments are not integers', () => {
+      utils.gcd().should.be.true;
+      ( () => utils.gcd()        ).should.throw(TypeError);
+      ( () => utils.gcd('32', 1) ).should.throw(TypeError);
+    });
+
+    it('throws a TypeError if any value is less than 1', () => {
+      utils.gcd().should.be.true;
+      ( () => utils.gcd(0, 56)  ).should.throw(TypeError);
+      ( () => utils.gcd(13, -7) ).should.throw(TypeError);
+    });
+  });
+
 });
+
 
