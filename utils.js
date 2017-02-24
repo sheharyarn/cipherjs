@@ -94,6 +94,20 @@ const getSubstitutionMapFromKey = (key) => {
 }
 
 
+/**
+ * Checks if the passed argument is an Integer,
+ * and throws an error if not
+ *
+ * @param  {any}
+ * @return {boolean}
+ */
+const validateInteger = (term) => {
+  if (typeof term === 'number' && (term % 1) === 0)
+    return true;
+  else
+    throw new TypeError(`"${term}" is not a valid Integer`);
+}
+
 
 
 // Export Modules
@@ -109,6 +123,8 @@ module.exports = {
   stringToNumArray,
   bringInRange,
   getSubstitutionMapFromKey,
+
+  validateInteger,
   cleanString
 };
 

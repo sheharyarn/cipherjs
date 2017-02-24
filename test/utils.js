@@ -102,5 +102,26 @@ describe('Utility Methods', () => {
     });
   });
 
+
+  describe('#validateInteger', () => {
+    it('returns true for valid integers', () => {
+      utils.validateInteger(  0).should.be.true;
+      utils.validateInteger( 17).should.be.true;
+      utils.validateInteger(-20).should.be.true;
+      utils.validateInteger(359).should.be.true;
+    });
+
+    it('raises error for invalid integers', () => {
+      (() => utils.validateInteger()          ).should.throw(TypeError);
+      (() => utils.validateInteger('')        ).should.throw(TypeError);
+      (() => utils.validateInteger('2')       ).should.throw(TypeError);
+      (() => utils.validateInteger(4.5)       ).should.throw(TypeError);
+      (() => utils.validateInteger(NaN)       ).should.throw(TypeError);
+      (() => utils.validateInteger(null)      ).should.throw(TypeError);
+      (() => utils.validateInteger(undefined) ).should.throw(TypeError);
+    });
+  });
+
+
 });
 
