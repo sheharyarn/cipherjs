@@ -150,6 +150,24 @@ describe('Utility Methods', () => {
     });
   });
 
+
+  describe('#areCoprime', () => {
+    it('correctly checks if two positive integers are co-prime', () => {
+      utils.areCoprime(1,  100).should.be.true;
+      utils.areCoprime(5,    8).should.be.true;
+      utils.areCoprime(14,  15).should.be.true;
+
+      utils.areCoprime(2,   40).should.be.false;
+      utils.areCoprime(33,  15).should.be.false;
+      utils.areCoprime(105, 35).should.be.false;
+    });
+
+    it('throws a TypeError for invalid arguments', () => {
+      ( () => utils.gcd(0,  44) ).should.throw(TypeError);
+      ( () => utils.gcd(96, -5) ).should.throw(TypeError);
+    });
+  });
+
 });
 
 

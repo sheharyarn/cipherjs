@@ -133,6 +133,18 @@ const gcd = (a, b) => {
 }
 
 
+/**
+ * Checks if two numbers are co-prime
+ *
+ * @param  {number}
+ * @param  {number}
+ * @return {boolean}
+ */
+const areCoprime = (a, b) => {
+  return gcd(a, b) === 1;
+}
+
+
 
 // Export Modules
 // --------------
@@ -149,6 +161,7 @@ module.exports = {
   getSubstitutionMapFromKey,
 
   gcd,
+  areCoprime,
   validateIntegers,
   cleanString
 };
