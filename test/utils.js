@@ -140,14 +140,12 @@ describe('Utility Methods', () => {
     });
 
     it('throws a TypeError if arguments are not integers', () => {
-      utils.gcd().should.be.true;
       ( () => utils.gcd()        ).should.throw(TypeError);
       ( () => utils.gcd('32', 1) ).should.throw(TypeError);
     });
 
     it('throws a TypeError if any value is less than 1', () => {
-      utils.gcd().should.be.true;
-      ( () => utils.gcd(0, 56)  ).should.throw(TypeError);
+      ( () => utils.gcd(0,  56) ).should.throw(TypeError);
       ( () => utils.gcd(13, -7) ).should.throw(TypeError);
     });
   });

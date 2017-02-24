@@ -113,6 +113,26 @@ const validateIntegers = (t, ...terms) => {
 }
 
 
+/**
+ * Calculates GCD of two integers using Euclidean Algorithm.
+ *
+ * @param  {number}
+ * @param  {number}
+ * @return {number}
+ */
+const gcd = (a, b) => {
+  validateIntegers(a, b);
+
+  if (a <= 0 || b < 0)
+    throw new TypeError('Only Positive Integers can be used for GCD');
+
+  if (b === 0)
+    return a;
+  else
+    return gcd(b, a % b);
+}
+
+
 
 // Export Modules
 // --------------
@@ -128,6 +148,7 @@ module.exports = {
   bringInRange,
   getSubstitutionMapFromKey,
 
+  gcd,
   validateIntegers,
   cleanString
 };
