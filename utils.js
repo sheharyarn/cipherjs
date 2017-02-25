@@ -9,6 +9,9 @@ const LETTER_RANGE  = 26;
 const ALPHABET      = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const ALPHABET_LIST = ALPHABET.split('');
 
+class NotAnIntegerError        extends TypeError {}
+class NotAPositiveIntegerError extends NotAnIntegerError {}
+
 
 /**
  * Converts a number in the 0-25 range into
@@ -106,7 +109,7 @@ const validateIntegers = (t, ...terms) => {
     if (typeof term === 'number' && (term % 1) === 0)
       return true;
     else
-      throw new TypeError(`"${term}" is not a valid Integer`);
+      throw new NotAnIntegerError(`"${term}" is not a valid Integer`);
   }
 
   return terms.concat(t).map(isInteger) && true;
@@ -124,7 +127,7 @@ const gcd = (a, b) => {
   validateIntegers(a, b);
 
   if (a <= 0 || b < 0)
-    throw new TypeError('Only Positive Integers can be used for GCD');
+    throw new NotAPositiveIntegerError('Only Positive Integers can be used for GCD');
 
   if (b === 0)
     return a;
@@ -152,6 +155,9 @@ const areCoprime = (a, b) => {
 module.exports = {
   ALPHABET,
   ALPHABET_LIST,
+
+  NotAnIntegerError,
+  NotAPositiveIntegerError,
 
   numToChar,
   charToNum,

@@ -3,6 +3,10 @@
 const should = require('chai').should();
 const utils  = require('../utils');
 
+const NotAnIntegerError        = utils.NotAnIntegerError;
+const NotAPositiveIntegerError = utils.NotAPositiveIntegerError;
+
+
 describe('Utility Methods', () => {
 
   describe('#numToChar', () => {
@@ -112,21 +116,21 @@ describe('Utility Methods', () => {
     });
 
     it('raises error for invalid integers', () => {
-      ( () => utils.validateIntegers()          ).should.throw(TypeError);
-      ( () => utils.validateIntegers('')        ).should.throw(TypeError);
-      ( () => utils.validateIntegers('2')       ).should.throw(TypeError);
-      ( () => utils.validateIntegers(4.5)       ).should.throw(TypeError);
-      ( () => utils.validateIntegers(NaN)       ).should.throw(TypeError);
-      ( () => utils.validateIntegers(null)      ).should.throw(TypeError);
-      ( () => utils.validateIntegers(undefined) ).should.throw(TypeError);
+      ( () => utils.validateIntegers()          ).should.throw(NotAnIntegerError);
+      ( () => utils.validateIntegers('')        ).should.throw(NotAnIntegerError);
+      ( () => utils.validateIntegers('2')       ).should.throw(NotAnIntegerError);
+      ( () => utils.validateIntegers(4.5)       ).should.throw(NotAnIntegerError);
+      ( () => utils.validateIntegers(NaN)       ).should.throw(NotAnIntegerError);
+      ( () => utils.validateIntegers(null)      ).should.throw(NotAnIntegerError);
+      ( () => utils.validateIntegers(undefined) ).should.throw(NotAnIntegerError);
     });
 
     it('works for multiple arguments', () => {
       utils.validateIntegers(1,2,3).should.be.true;
       utils.validateIntegers(4,5,6).should.be.true;
 
-      ( () => utils.validateIntegers(9, 0, NaN, null)   ).should.throw(TypeError);
-      ( () => utils.validateIntegers('', 12, undefined) ).should.throw(TypeError);
+      ( () => utils.validateIntegers(9, 0, NaN, null)   ).should.throw(NotAnIntegerError);
+      ( () => utils.validateIntegers('', 12, undefined) ).should.throw(NotAnIntegerError);
     });
   });
 
@@ -140,13 +144,13 @@ describe('Utility Methods', () => {
     });
 
     it('throws a TypeError if arguments are not integers', () => {
-      ( () => utils.gcd()        ).should.throw(TypeError);
-      ( () => utils.gcd('32', 1) ).should.throw(TypeError);
+      ( () => utils.gcd()        ).should.throw(NotAnIntegerError);
+      ( () => utils.gcd('32', 1) ).should.throw(NotAnIntegerError);
     });
 
     it('throws a TypeError if any value is less than 1', () => {
-      ( () => utils.gcd(0,  56) ).should.throw(TypeError);
-      ( () => utils.gcd(13, -7) ).should.throw(TypeError);
+      ( () => utils.gcd(0,  56) ).should.throw(NotAPositiveIntegerError);
+      ( () => utils.gcd(13, -7) ).should.throw(NotAPositiveIntegerError);
     });
   });
 
@@ -163,8 +167,8 @@ describe('Utility Methods', () => {
     });
 
     it('throws a TypeError for invalid arguments', () => {
-      ( () => utils.gcd(0,  44) ).should.throw(TypeError);
-      ( () => utils.gcd(96, -5) ).should.throw(TypeError);
+      ( () => utils.gcd(0,  44) ).should.throw(NotAnIntegerError);
+      ( () => utils.gcd(96, -5) ).should.throw(NotAnIntegerError);
     });
   });
 

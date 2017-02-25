@@ -7,14 +7,14 @@ describe('Affine Cipher', () => {
 
   describe('#encrypt', () => {
     it('throws error if "a" key is not coprime with 26', () => {
-      ( () => Affine.encrypt('HELLO', 2, 10) ).should.throw(TypeError);
-      ( () => Affine.encrypt('HELLO', 8, 23) ).should.throw(TypeError);
-      ( () => Affine.encrypt('HELLO', 13, 5) ).should.throw(TypeError);
+      ( () => Affine.encrypt('HELLO', 2, 10) ).should.throw(RangeError);
+      ( () => Affine.encrypt('HELLO', 8, 23) ).should.throw(RangeError);
+      ( () => Affine.encrypt('HELLO', 13, 5) ).should.throw(RangeError);
     });
 
     it('throws error if "b" key is not between 0-25', () => {
-      ( () => Affine.encrypt('HELLO', 1,  30) ).should.throw(TypeError);
-      ( () => Affine.encrypt('HELLO', 11, 55) ).should.throw(TypeError);
+      ( () => Affine.encrypt('HELLO', 1,  30) ).should.throw(RangeError);
+      ( () => Affine.encrypt('HELLO', 11, 55) ).should.throw(RangeError);
     });
 
     it('correctly encrypts plaintexts for valid keys', () => {
