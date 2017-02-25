@@ -27,7 +27,7 @@ describe('Affine Cipher', () => {
     });
 
     it('removes all numbers and special characters', () => {
-      Affine.encrypt('T#!5 I5 4 W3!RD K3Y', 19, 20).should.eql('R Q WFZ CI');
+      Affine.encrypt('T#!5 I5 A W3!RD K3Y', 19, 20).should.eql('R Q U WFZ CI');
     });
   });
 
