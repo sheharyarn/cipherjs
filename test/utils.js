@@ -157,10 +157,10 @@ describe('Utility Methods', () => {
 
   describe('#multiplicativeInverse', () => {
     it('returns correct multiplicative inverses for two integers', () => {
-      utils.multiplicativeInverse(1,  100).should.eql(1);
-      utils.multiplicativeInverse(13,  25).should.eql(2);
       utils.multiplicativeInverse(5,   26).should.eql(21);
       utils.multiplicativeInverse(9,   13).should.eql(3);
+      utils.multiplicativeInverse(1,  100).should.eql(1);
+      utils.multiplicativeInverse(13,  25).should.eql(2);
     });
 
     it('throws a TypeError if arguments are not integers', () => {

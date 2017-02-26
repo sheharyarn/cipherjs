@@ -169,6 +169,24 @@ const xgcd = (a, b) => {
 
 
 /**
+ * Finds multiplicative inverse of "a" w.r.t. "b" using
+ * Extended Euclidean Algorithm
+ *
+ * @param  {number} a
+ * @param  {number} b
+ * @return {number}
+ */
+const multiplicativeInverse = (a, b) => {
+  validateIntegers(a, b);
+
+  if (a <= 0 || b < 0)
+    throw new NotAPositiveIntegerError('Only Positive Integers can be used for GCD');
+
+  return positiveMod(xgcd(a, b)[0], b);
+}
+
+
+/**
  * Checks if two numbers are co-prime
  *
  * @param  {number}
@@ -199,6 +217,7 @@ module.exports = {
   getSubstitutionMapFromKey,
 
   gcd,
+  multiplicativeInverse,
   areCoprime,
   validateIntegers,
   cleanString
