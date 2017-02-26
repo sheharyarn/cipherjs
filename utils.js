@@ -4,10 +4,10 @@
 // Utility Methods
 // ---------------
 
-const ASCII_DIFF    = 65;
-const LETTER_RANGE  = 26;
-const ALPHABET      = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-const ALPHABET_LIST = ALPHABET.split('');
+const ASCII_DIFF      = 65;
+const ALPHABET        = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const ALPHABET_LIST   = ALPHABET.split('');
+const ALPHABET_RANGE  = ALPHABET.length;
 
 class NotAnIntegerError        extends TypeError {}
 class NotAPositiveIntegerError extends NotAnIntegerError {}
@@ -60,13 +60,24 @@ const stringToNumArray = (string) => {
 
 
 /**
+ * Does a Postive Mod (result is always a positive integer)
+ *
+ * @param  {number} num
+ * @return {number}
+ */
+const positiveMod = (num, div) => {
+  return ((num % div) + div) % div;
+}
+
+
+/**
  * Bring a number bigger than the range, back into range
  *
  * @param  {number} num
  * @return {number}
  */
 const bringInRange = (num) => {
-  return ((num % LETTER_RANGE) + LETTER_RANGE) % LETTER_RANGE;
+  return positiveMod(num, ALPHABET_RANGE);
 }
 
 
@@ -133,6 +144,27 @@ const gcd = (a, b) => {
     return a;
   else
     return gcd(b, a % b);
+}
+
+
+/**
+ * Calculates GCD along with the Multiplicative Inverse of two
+ * integers using Extended Euclidean Algorithm
+ *
+ * @param  {number}
+ * @param  {number}
+ * @return {number}
+ */
+const xgcd = (a, b) => {
+  if (b === 0) {
+    return [1, 0, a];
+
+  } else {
+    let x, y, d;
+    [x, y, d] = xgcd(b, a % b);
+
+    return [y, x - y * Math.floor(a/b), d];
+  }
 }
 
 
