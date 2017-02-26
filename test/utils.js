@@ -155,6 +155,26 @@ describe('Utility Methods', () => {
   });
 
 
+  describe('#multiplicativeInverse', () => {
+    it('returns correct multiplicative inverses for two integers', () => {
+      utils.multiplicativeInverse(1,  100).should.eql(1);
+      utils.multiplicativeInverse(13,  25).should.eql(2);
+      utils.multiplicativeInverse(5,   26).should.eql(21);
+      utils.multiplicativeInverse(9,   13).should.eql(3);
+    });
+
+    it('throws a TypeError if arguments are not integers', () => {
+      ( () => utils.multiplicativeInverse()        ).should.throw(NotAnIntegerError);
+      ( () => utils.multiplicativeInverse('32', 1) ).should.throw(NotAnIntegerError);
+    });
+
+    it('throws a TypeError if any value is less than 1', () => {
+      ( () => utils.multiplicativeInverse(0,  56) ).should.throw(NotAPositiveIntegerError);
+      ( () => utils.multiplicativeInverse(13, -7) ).should.throw(NotAPositiveIntegerError);
+    });
+  });
+
+
   describe('#areCoprime', () => {
     it('correctly checks if two positive integers are co-prime', () => {
       utils.areCoprime(1,  100).should.be.true;
