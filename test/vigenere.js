@@ -7,7 +7,7 @@ describe('Vigenere Cipher', () => {
 
   describe('#encrypt', () => {
     it('correctly encrypts plaintexts for valid key', () => {
-      Vigenere.encrypt('MANHATTAN',            'CODE').should.eql('MJQQT');
+      Vigenere.encrypt('MANHATTAN',            'CODE').should.eql('OOQLCHWEP');
       Vigenere.encrypt('SUPERSECRETMESSAGE', 'ZEBRAS').should.eql('RYQVRKDGSVTEDWTRGW');
     });
 
