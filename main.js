@@ -30,6 +30,12 @@
       .concat(quitChoices);
 
 
+  // Encrypt/Decrypt choices to show to the user
+  const actionChoices = [
+    { name: 'Encrypt', value: 'encrypt' },
+    { name: 'Decrypt', value: 'decrypt' },
+  ].concat(quitChoices);
+
 
   // Check if the user wants to quit or not
   const validateAnswer = ({ input }) => {
@@ -39,6 +45,20 @@
     } else {
       return input;
     }
+  }
+
+
+  // Ask the user what action (encrypt/decrypt) does he want to perform
+  const getActionInput = (cipher) => {
+    inquirer
+      .prompt({
+        name:    'input',
+        type:    'list',
+        message: 'What do you want to do?',
+        choices: actionChoices
+      })
+      .then(validateAnswer)
+      .then(action => {});
   }
 
 
@@ -52,7 +72,7 @@
         choices: cipherChoices
       })
       .then(validateAnswer)
-      .then(() => {});
+      .then(getActionInput);
   }
 
 
@@ -63,8 +83,6 @@ console.log(`
 Cipher Utility
 -------------------------
 (By Sheharyar Naseer)
-
-
 `)
 
 getCipherInput();
