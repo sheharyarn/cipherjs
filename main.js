@@ -48,6 +48,28 @@
   }
 
 
+  // Get the Arguments for specified cipher
+  const getArgumentsInput = (ci, action) => {
+    const [start, end] =
+      (action === 'encrypt') ? ['Plaintext', 'Ciphertext'] : ['Ciphertext', 'Plaintext'];
+
+    const msg     = `Enter your ${start}`;
+    const cipher  = ciphers[ci];
+    const prompts =
+      cipher
+        .args
+        .map((a, i) => ({
+          value:  i,
+          type:   'input',
+          name:   `Enter ${a.n}`,
+          validate: (inp) => {
+            return true;
+          }
+        }));
+
+  };
+
+
   // Ask the user what action (encrypt/decrypt) does he want to perform
   const getActionInput = (cipher) => {
     inquirer
@@ -58,7 +80,7 @@
         choices: actionChoices
       })
       .then(validateAnswer)
-      .then(action => {});
+      .then(action => getArgumentsInput(cipher, action));
   }
 
 
