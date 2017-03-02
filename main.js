@@ -7,6 +7,10 @@
   // Import Modules
   const cipherjs = require('./index');
   const inquirer = require('inquirer');
+  const chalk    = require('chalk');
+  const print    = console.log;
+  const bold     = chalk.bold;
+  const accent   = chalk.yellow;
 
 
   // Define Available Cipher Types
@@ -50,7 +54,7 @@
   // Check if the user wants to quit or not
   const validateAnswer = ({ input }) => {
     if (input === -1) {
-      console.log('\nBye!\n');
+      print('\nBye!\n');
       process.exit();
     } else {
       return input;
@@ -84,10 +88,10 @@
       .prompt([{ name: 'data', message: msg, type: 'input' }].concat(prompts))
       .then(ans    => [ans.data, ...(cipher.args.map((a,i) => parseArgument(a, ans[i]) ))])
       .then(args   => cipher.call[action](...args))
-      .then(result => console.log(`\nYour ${end} is:\n  ${result}\n\n`))
+      .then(result => print(`\nYour ${end} is:\n  ${accent(result)}\n\n`))
       .then(getCipherInput)
       .catch(err => {
-        console.log(`  Invalid Argument: ${err}. Try Again.`);
+        print(`  Invalid Argument: ${err}. Try Again.`);
         getArgumentsInput(ci, action);
       });
   };
@@ -123,16 +127,16 @@
 
 
 
+  print();
+  print(bold('Cipher Utility'));
+  print(bold('----------------------'));
+  print('By ' + accent('Sheharyar Naseer'));
+  print();
+  print(chalk.dim(chalk.underline('Note') + ': Numbers & Special Characters are automatically removed'));
+  print();
+  print();
 
-console.log(`
-Cipher Utility
--------------------------
-By Sheharyar Naseer
-Note: Numbers & Special Characters are automatically removed
-
-`)
-
-getCipherInput();
+  getCipherInput();
 
 
 })();
