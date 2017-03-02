@@ -84,8 +84,12 @@
       .prompt([{ name: 'data', message: msg, type: 'input' }].concat(prompts))
       .then(ans    => [ans.data, ...(cipher.args.map((a,i) => parseArgument(a, ans[i]) ))])
       .then(args   => cipher.call[action](...args))
-      .then(result => console.log(`\nYour ${end} is:\n${result}\n\n`))
-      .then(getCipherInput);
+      .then(result => console.log(`\nYour ${end} is:\n  ${result}\n\n`))
+      .then(getCipherInput)
+      .catch(err => {
+        console.log(`  Invalid Argument: ${err}. Try Again.`);
+        getArgumentsInput(ci, action);
+      });
   };
 
 
@@ -123,7 +127,8 @@
 console.log(`
 Cipher Utility
 -------------------------
-(By Sheharyar Naseer)
+By Sheharyar Naseer
+Note: Numbers & Special Characters are automatically removed
 
 `)
 
