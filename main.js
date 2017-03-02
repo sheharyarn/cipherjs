@@ -19,6 +19,11 @@
   ];
 
 
+  // Check if value is an integer
+  const isInt = (value) =>
+    !isNaN(value) && parseInt(Number(value)) == value && !isNaN(parseInt(value, 10));
+
+
   // Quit Message for the User
   const quitChoices = [new inquirer.Separator(), { name: 'Quit', value: -1 }];
 
@@ -53,20 +58,31 @@
     const [start, end] =
       (action === 'encrypt') ? ['Plaintext', 'Ciphertext'] : ['Ciphertext', 'Plaintext'];
 
-    const msg     = `Enter your ${start}`;
+    const msg     = `Enter your ${start}:\n `;
     const cipher  = ciphers[ci];
     const prompts =
       cipher
         .args
         .map((a, i) => ({
-          value:  i,
-          type:   'input',
-          name:   `Enter ${a.n}`,
+          name:     `${i}`,
+          type:     'input',
+          message:  `Enter ${a.n}:`,
           validate: (inp) => {
             return true;
           }
         }));
 
+    const parseArgument = (arg, input) => {
+      if      (arg.t === 'string')  return `${input}`;
+      else if (arg.t === 'integer') return parseInt(input);
+    }
+
+    inquirer
+      .prompt([{ name: 'data', message: msg, type: 'input' }].concat(prompts))
+      .then(ans    => [ans.data, ...(cipher.args.map((a,i) => parseArgument(a, ans[i]) ))])
+      .then(args   => cipher.call[action](...args))
+      .then(result => console.log(`\nYour ${end} is:\n${result}\n\n\n`))
+      .then(getCipherInput);
   };
 
 
@@ -105,6 +121,7 @@ console.log(`
 Cipher Utility
 -------------------------
 (By Sheharyar Naseer)
+
 `)
 
 getCipherInput();
