@@ -19,6 +19,11 @@
   ];
 
 
+  // Capitalize First Letter
+  String.prototype.capitalize = function() {
+      return this.charAt(0).toUpperCase() + this.slice(1);
+  }
+
   // Check if value is an integer
   const isInt = (value) =>
     !isNaN(value) && parseInt(Number(value)) == value && !isNaN(parseInt(value, 10));
@@ -66,10 +71,8 @@
         .map((a, i) => ({
           name:     `${i}`,
           type:     'input',
-          message:  `Enter ${a.n}:`,
-          validate: (inp) => {
-            return true;
-          }
+          message:  `Enter ${a.n} (${a.t.capitalize()}):`,
+          validate: (inp) => (inp === `${parseArgument(a, inp)}`)
         }));
 
     const parseArgument = (arg, input) => {
@@ -81,7 +84,7 @@
       .prompt([{ name: 'data', message: msg, type: 'input' }].concat(prompts))
       .then(ans    => [ans.data, ...(cipher.args.map((a,i) => parseArgument(a, ans[i]) ))])
       .then(args   => cipher.call[action](...args))
-      .then(result => console.log(`\nYour ${end} is:\n${result}\n\n\n`))
+      .then(result => console.log(`\nYour ${end} is:\n${result}\n\n`))
       .then(getCipherInput);
   };
 
