@@ -2,19 +2,32 @@
   "name": "cipherjs",
   "version": "0.0.5",
   "description": "Javascript implementation of simple ciphers",
+
+  "license": "MIT",
+  "repository": "sheharyarn/cipherjs",
+
+  "author": {
+    "name": "Sheharyar Naseer",
+    "email": "hello@sheharyar.me",
+    "url": "https://sheharyar.me"
+  },
+
+
   "main": "index.js",
+
   "scripts": {
     "test":  "mocha --reporter spec",
     "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
   },
-  "author": "Sheharyar Naseer <hello@sheharyar.me> (https://sheharyar.me/)",
-  "license": "MIT",
+
+
   "devDependencies": {
     "chai": "^3.5.0",
     "coveralls": "^2.13.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.2.0"
   },
+
   "dependencies": {
     "chalk": "^1.1.3",
     "inquirer": "^3.0.5"
