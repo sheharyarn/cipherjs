@@ -5,7 +5,7 @@
 (() => {
 
   // Import Modules
-  const cipherjs = require('./index');
+  const cipherjs = require('../index');
   const inquirer = require('inquirer');
   const chalk    = require('chalk');
   const print    = console.log;
