@@ -20,6 +20,24 @@
     "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
   },
 
+  "files": [
+    "index.js",
+    "bin"
+  ],
+
+  "keywords": [
+    "cli",
+    "crypto",
+    "cryptography",
+    "cipher",
+    "caesar",
+    "substitution",
+    "vigenere",
+    "affine",
+    "encrypt",
+    "decrypt"
+  ],
+
   "devDependencies": {
     "chai": "^3.5.0",
     "coveralls": "^2.13.0",
