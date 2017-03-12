@@ -9,17 +9,16 @@
   "author": {
     "name": "Sheharyar Naseer",
     "email": "hello@sheharyar.me",
-    "url": "https://sheharyar.me"
+    "url": "https://sheharyar.me/"
   },
 
-
   "main": "index.js",
+  "bin":  "./bin/cli.js",
 
   "scripts": {
     "test":  "mocha --reporter spec",
     "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
   },
-
 
   "devDependencies": {
     "chai": "^3.5.0",
