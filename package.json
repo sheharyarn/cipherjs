@@ -1,6 +1,6 @@
 {
   "name": "cipherjs",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Javascript implementation of simple ciphers",
 
   "license": "MIT",
@@ -22,6 +22,7 @@
 
   "files": [
     "index.js",
+    "lib",
     "bin"
   ],
 
