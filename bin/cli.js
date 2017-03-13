@@ -128,7 +128,7 @@
 
 
   print();
-  print(bold('Cipher Utility'));
+  print(bold('CipherJS - CLI'));
   print(bold('----------------------'));
   print('By ' + accent('Sheharyar Naseer'));
   print();
