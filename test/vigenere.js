@@ -1,7 +1,7 @@
 'use strict';
 
 const should   = require('chai').should();
-const Vigenere = require('../index').Vigenere;
+const Vigenere = require('../src/index').Vigenere;
 
 describe('Vigenere Cipher', () => {
 

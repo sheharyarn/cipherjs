@@ -12,7 +12,7 @@
     "url": "https://sheharyar.me/"
   },
 
-  "main": "index.js",
+  "main": "./src/index.js",
   "bin":  "./bin/cli.js",
 
   "scripts": {
@@ -22,7 +22,7 @@
 
   "files": [
     "index.js",
-    "lib",
+    "src",
     "bin"
   ],
 

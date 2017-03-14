@@ -1,7 +1,7 @@
 'use strict';
 
 const should = require('chai').should();
-const Affine = require('../index').Affine;
+const Affine = require('../src/index').Affine;
 
 describe('Affine Cipher', () => {
 

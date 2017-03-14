@@ -1,7 +1,7 @@
 'use strict';
 
 const should = require('chai').should();
-const utils  = require('../lib/utils');
+const utils  = require('../src/utils');
 
 const NotAnIntegerError        = utils.NotAnIntegerError;
 const NotAPositiveIntegerError = utils.NotAPositiveIntegerError;

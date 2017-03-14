@@ -1,7 +1,7 @@
 'use strict';
 
 const should = require('chai').should();
-const Caesar = require('../index').Caesar;
+const Caesar = require('../src/index').Caesar;
 
 describe('Caesar Cipher', () => {
 

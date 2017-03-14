@@ -1,7 +1,7 @@
 'use strict';
 
 const should       = require('chai').should();
-const Substitution = require('../index').Substitution;
+const Substitution = require('../src/index').Substitution;
 
 describe('Simple Substitution Cipher', () => {
 
