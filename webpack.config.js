@@ -43,9 +43,12 @@ const config = {
   },
 
 
-  // Plugins
   plugins: [
-    new webpack.optimize.UglifyJsPlugin()
+    // Uglify Builds
+    new webpack.optimize.UglifyJsPlugin(),
+
+    // Don't build when compilation fails
+    new webpack.NoEmitOnErrorsPlugin()
   ]
 
 };
