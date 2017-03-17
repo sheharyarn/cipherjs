@@ -24,13 +24,23 @@ const config = {
   module: {
     loaders: [
       {
+        // Use babel against all project js files
         loader:  'babel-loader',
         test:    /(\.js)$/,
-        exclude: /node_modules/
+        exclude: /node_modules/,
+
+        // Support the last 5 browser versions
+        options: {
+          presets: [['env', {
+            targets: {
+              node: 'current',
+              browsers: 'last 5 versions'
+            }
+          }]]
+        }
       }
     ]
   }
-
 };
 
 
