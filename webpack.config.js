@@ -40,7 +40,14 @@ const config = {
         }
       }
     ]
-  }
+  },
+
+
+  // Plugins
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin()
+  ]
+
 };
 
 
