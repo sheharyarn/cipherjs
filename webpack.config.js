@@ -16,7 +16,7 @@ const config = {
   // Build Destination File
   output: {
     path:     dir_build,
-    filename: output + '.js'
+    filename: output + '.min.js'
   },
 
 
@@ -49,7 +49,13 @@ const config = {
 
     // Don't build when compilation fails
     new webpack.NoEmitOnErrorsPlugin()
-  ]
+  ],
+
+
+  stats: {
+    // Nice colorful outputs
+    colors: true
+  }
 
 };
 
