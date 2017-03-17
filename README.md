@@ -13,6 +13,25 @@ $ npm install -g cipherjs
 
 
 
+## Usage
+
+Start by `require`-ing the module:
+
+```js
+const CipherJS = require('cipherjs');
+```
+
+It returns an `Object` of available ciphers, each with their own `encrypt` and `decrypt` methods:
+
+```js
+const Vigenere  = CipherJS.Vigenere;
+
+Vigenere.encrypt('MY SECRET MESSAGE', 'MY SECRET KEY')
+// YW KIEIIM WIQEYYI
+```
+
+
+
 ## Contributing
 
  - [Fork][gh-fork], Enhance, Send PR
