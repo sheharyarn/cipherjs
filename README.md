@@ -7,8 +7,16 @@
 
 ## Installation
 
+Install the package using `yarn`:
+
 ```bash
-$ npm install -g cipherjs
+$ yarn add cipherjs
+```
+
+or `npm`:
+
+```bash
+$ npm install --save cipherjs
 ```
 
 
@@ -28,6 +36,23 @@ const Vigenere  = CipherJS.Vigenere;
 
 Vigenere.encrypt('MY SECRET MESSAGE', 'MY SECRET KEY')
 // YW KIEIIM WIQEYYI
+```
+
+
+
+## Command-line Application
+
+`cipherjs` comes with a CLI app that lets you encrypt or decrypt data interactively. To use it,
+install the package globally:
+
+```bash
+$ npm install -g cipherjs
+```
+
+and just execute `cipherjs` in your terminal:
+
+```bash
+$ cipherjs
 ```
 
 
