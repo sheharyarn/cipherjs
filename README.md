@@ -1,5 +1,11 @@
-[cipherjs][gh-repo]
-===================
+[cipherjs][github-repo]
+=======================
+
+[![Build Status][shield-travis]][travis]
+[![Coverage Status][shield-coveralls]][coveralls]
+[![Version][shield-version]][npm]
+[![Downloads][shield-downloads]][npm]
+
 
 > Javascript implementation of simple Ciphers
 
@@ -59,7 +65,7 @@ $ cipherjs
 
 ## Contributing
 
- - [Fork][gh-fork], Enhance, Send PR
+ - [Fork][github-fork], Enhance, Send PR
  - Lock issues with any bugs or feature requests
  - Implement something from Roadmap
  - Spread the word
@@ -68,11 +74,21 @@ $ cipherjs
 
 ## License
 
-This package is available as open source under the terms of the [MIT License][gh-license].
+This package is available as open source under the terms of the [MIT License][github-license].
 
 
 
-  [gh-repo]:    https://github.com/sheharyarn/
-  [gh-fork]:    https://github.com/sheharyarn/fork
-  [gh-license]: https://github.com/sheharyarn/cipherjs/blob/master/LICENSE
+  [npm]:              https://www.npmjs.com/package/cipherjs
+  [travis]:           https://travis-ci.org/sheharyarn/cipherjs
+  [coveralls]:        https://coveralls.io/github/sheharyarn/cipherjs
+
+  [github-repo]:      https://github.com/sheharyarn/
+  [github-fork]:      https://github.com/sheharyarn/fork
+  [github-license]:   https://github.com/sheharyarn/cipherjs/blob/master/LICENSE
+
+  [shield-travis]:    https://img.shields.io/travis/sheharyarn/cipherjs.svg
+  [shield-coveralls]: https://img.shields.io/coveralls/sheharyarn/cipherjs.svg
+  [shield-downloads]: https://img.shields.io/npm/dt/cipherjs.svg
+  [shield-version]:   https://img.shields.io/npm/v/cipherjs.svg
+
 
