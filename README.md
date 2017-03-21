@@ -1,4 +1,4 @@
-[![CipherJS][logo =500px]][github-repo]
+[<img src='media/logo.png' width='400px' />][github-repo]
 =========================================================
 
 [![Build Status][shield-travis]][travis]
