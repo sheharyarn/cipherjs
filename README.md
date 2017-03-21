@@ -9,6 +9,9 @@
 
 > Javascript implementation of simple Ciphers
 
+<br/>
+
+
 
 
 ## Installation
@@ -24,6 +27,9 @@ or `npm`:
 ```bash
 $ npm install --save cipherjs
 ```
+
+<br/>
+
 
 
 
@@ -44,6 +50,9 @@ Vigenere.encrypt('MY SECRET MESSAGE', 'MY SECRET KEY')
 // YW KIEIIM WIQEYYI
 ```
 
+<br/>
+
+
 
 
 ## Command-line App
@@ -61,6 +70,9 @@ and just execute `cipherjs` in your terminal:
 $ cipherjs
 ```
 
+<br/>
+
+
 
 
 ## Contributing
@@ -70,11 +82,17 @@ $ cipherjs
  - Implement something from Roadmap
  - Spread the word
 
+<br/>
+
+
 
 
 ## License
 
 This package is available as open source under the terms of the [MIT License][github-license].
+
+<br/>
+
 
 
 
@@ -83,8 +101,8 @@ This package is available as open source under the terms of the [MIT License][gi
   [travis]:           https://travis-ci.org/sheharyarn/cipherjs
   [coveralls]:        https://coveralls.io/github/sheharyarn/cipherjs
 
-  [github-repo]:      https://github.com/sheharyarn/
-  [github-fork]:      https://github.com/sheharyarn/fork
+  [github-repo]:      https://github.com/sheharyarn/cipherjs
+  [github-fork]:      https://github.com/sheharyarn/cipherjs/fork
   [github-license]:   https://github.com/sheharyarn/cipherjs/blob/master/LICENSE
 
   [shield-travis]:    https://img.shields.io/travis/sheharyarn/cipherjs.svg
