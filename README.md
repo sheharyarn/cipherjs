@@ -1,10 +1,10 @@
-[cipherjs][github-repo]
-=======================
+[![CipherJS][logo =500px]][github-repo]
+=========================================================
 
 [![Build Status][shield-travis]][travis]
 [![Coverage Status][shield-coveralls]][coveralls]
-[![Version][shield-version]][npm]
 [![Downloads][shield-downloads]][npm]
+[![Version][shield-version]][npm]
 
 
 > Javascript implementation of simple Ciphers
@@ -38,7 +38,7 @@ const CipherJS = require('cipherjs');
 It returns an `Object` of available ciphers, each with their own `encrypt` and `decrypt` methods:
 
 ```js
-const Vigenere  = CipherJS.Vigenere;
+const Vigenere = CipherJS.Vigenere;
 
 Vigenere.encrypt('MY SECRET MESSAGE', 'MY SECRET KEY')
 // YW KIEIIM WIQEYYI
@@ -46,7 +46,7 @@ Vigenere.encrypt('MY SECRET MESSAGE', 'MY SECRET KEY')
 
 
 
-## Command-line Application
+## Command-line App
 
 `cipherjs` comes with a CLI app that lets you encrypt or decrypt data interactively. To use it,
 install the package globally:
@@ -78,6 +78,7 @@ This package is available as open source under the terms of the [MIT License][gi
 
 
 
+  [logo]:             media/logo.png
   [npm]:              https://www.npmjs.com/package/cipherjs
   [travis]:           https://travis-ci.org/sheharyarn/cipherjs
   [coveralls]:        https://coveralls.io/github/sheharyarn/cipherjs
