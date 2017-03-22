@@ -70,6 +70,8 @@ and just execute `cipherjs` in your terminal:
 $ cipherjs
 ```
 
+![CipherJS CLI Demo][cli-demo]
+
 <br/>
 
 
@@ -97,6 +99,8 @@ This package is available as open source under the terms of the [MIT License][gi
 
 
   [logo]:             media/logo.png
+  [cli-demo]:         media/cli.gif
+
   [npm]:              https://www.npmjs.com/package/cipherjs
   [travis]:           https://travis-ci.org/sheharyarn/cipherjs
   [coveralls]:        https://coveralls.io/github/sheharyarn/cipherjs
