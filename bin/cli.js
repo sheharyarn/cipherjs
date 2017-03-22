@@ -129,9 +129,7 @@
 
   print();
   print(bold('CipherJS - CLI'));
-  print(bold('----------------------'));
-  print('By ' + accent('Sheharyar Naseer'));
-  print();
+  print(bold('---------------'));
   print(chalk.dim(chalk.underline('Note') + ': Numbers & Special Characters are automatically removed'));
   print();
   print();
