@@ -13,8 +13,6 @@
 
 ![CipherJS CLI Demo][cli-demo]
 
-<br/>
-
 
 
 
@@ -45,12 +43,11 @@ Start by `require`-ing the module:
 const CipherJS = require('cipherjs');
 ```
 
-It returns an `Object` of available ciphers, each with their own `encrypt` and `decrypt` methods:
+It returns an `Object` of available ciphers, each with their own `encrypt` and
+`decrypt` methods:
 
 ```js
-const Vigenere = CipherJS.Vigenere;
-
-Vigenere.encrypt('MY SECRET MESSAGE', 'MY SECRET KEY')
+CipherJS.Vigenere.encrypt('MY SECRET MESSAGE', 'MY SECRET KEY')
 // YW KIEIIM WIQEYYI
 ```
 
@@ -61,8 +58,8 @@ Vigenere.encrypt('MY SECRET MESSAGE', 'MY SECRET KEY')
 
 ## Command-line App
 
-`cipherjs` comes with a CLI app that lets you encrypt or decrypt data interactively. To use it,
-install the package globally:
+`cipherjs` comes with a CLI app that lets you encrypt or decrypt data interactively.
+To use it, install the package globally:
 
 ```bash
 $ npm install -g cipherjs
@@ -72,6 +69,43 @@ and just execute `cipherjs` in your terminal:
 
 ```bash
 $ cipherjs
+```
+
+<br/>
+
+
+
+
+## Ciphers
+
+All Ciphers have one `encrypt` and `decrypt` method, with the first argument as the
+ciphertext / plaintext.
+
+
+### Affine Cipher
+
+Takes two numeric keys, the first of which should be a `coprime` with `26` and the
+second should be between `0-25`:
+
+```js
+CipherJS.Affine.encrypt('AFFINE CIPHER', 5, 23)
+// 'XWWLKR HLUGRE'
+
+CipherJS.Affine.decrypt('XWWLKR HLUGRE', 5, 23)
+// 'AFFINE CIPHER'
+```
+
+
+### Caesar Cipher
+
+Takes one numeric key along with the plaintext / ciphertext:
+
+```js
+CipherJS.Caesar.encrypt('CAESAR CIPHER', 13)
+// 'PNRFNE PVCURE'
+
+CipherJS.Caesar.decrypt('PNRFNE PVCURE', 13)
+// 'CAESAR CIPHER'
 ```
 
 <br/>
