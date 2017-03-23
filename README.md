@@ -108,6 +108,32 @@ CipherJS.Caesar.decrypt('PNRFNE PVCURE', 13)
 // 'CAESAR CIPHER'
 ```
 
+
+### Simple Substitution Cipher
+
+Takes only a string key for encoding and decoding:
+
+```js
+CipherJS.Substitution.encrypt('SIMPLE SUBSTITUTION CIPHER', 'SECRET KEY')
+// 'OBHLGT OQEOPBPQPBJI CBLATN'
+
+CipherJS.Substitution.decrypt('OBHLGT OQEOPBPQPBJI CBLATN', 'SECRET KEY')
+// 'SIMPLE SUBSTITUTION CIPHER'
+```
+
+
+### Vigenere Cipher
+
+Takes only a string key for encoding and decoding:
+
+```js
+CipherJS.Vigenere.encrypt('VIGENERE CIPHER', 'ANOTHER SECRET KEY')
+// 'VVUXUIIW GKGLXB'
+
+CipherJS.Vigenere.decrypt('VVUXUIIW GKGLXB', 'ANOTHER SECRET KEY')
+// 'VIGENERE CIPHER'
+```
+
 <br/>
 
 
