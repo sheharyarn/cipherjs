@@ -11,6 +11,10 @@
 
 <br/>
 
+![CipherJS CLI Demo][cli-demo]
+
+<br/>
+
 
 
 
@@ -69,8 +73,6 @@ and just execute `cipherjs` in your terminal:
 ```bash
 $ cipherjs
 ```
-
-![CipherJS CLI Demo][cli-demo]
 
 <br/>
 
