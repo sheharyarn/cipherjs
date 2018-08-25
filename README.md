@@ -1,4 +1,4 @@
-[<img src='media/logo.png' width='400px' />][github-repo]
+[<img src='media/logo.png' width='300px' />][github-repo]
 =========================================================
 
 [![Build Status][shield-travis]][travis]
