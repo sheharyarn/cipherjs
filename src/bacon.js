@@ -11,8 +11,11 @@ const Bacon = {
    * @returns {string} ciphertext
    */
   encrypt: (plaintext) => {
+    if (!plaintext) return;
+    if (typeof plaintext !== 'string') throw new TypeError('plaintext should be of Type string');
     const encrypted = [];
-    const split = plaintext.split('');
+    const split = plaintext.replace(/[^A-Za-z\s]/g, '').split('');
+    if (split.length < 1) return;
     for (let i = 0; i < split.length; i++) {
       const char = split[i].toUpperCase();
       if (utils.ALPHABET_LIST.includes(char)) {
@@ -32,9 +35,12 @@ const Bacon = {
    * @returns {string} plaintext
    */
   decrypt: (ciphertext) => {
+    if (!ciphertext) return;
+    if (typeof ciphertext !== 'string') throw new TypeError('ciphertext should be of Type string');
     const decrypted = [];
     let charGroup = [];
-    const split = ciphertext.replace(/[^A-B\s\W]/g, '').split('');
+    const split = ciphertext.replace(/[^A-B\s]/g, '').split('');
+    if (split.length < 1) return;
     for (let i = 0; i < split.length; i++) {
       const char = split[i].toUpperCase();
       if (/[AB]/.test(char)) {

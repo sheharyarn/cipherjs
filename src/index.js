@@ -17,6 +17,7 @@ const Bacon        = require('./bacon');
 
 module.exports = {
   Affine,
+  Bacon,
   Caesar,
   Substitution,
   Vigenere
