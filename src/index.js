@@ -8,6 +8,7 @@ const Affine       = require('./affine');
 const Caesar       = require('./caesar');
 const Substitution = require('./substitution');
 const Vigenere     = require('./vigenere');
+const Bacon        = require('./bacon');
 
 
 

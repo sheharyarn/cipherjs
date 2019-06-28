@@ -8,6 +8,7 @@ const ASCII_DIFF      = 65;
 const ALPHABET        = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const ALPHABET_LIST   = ALPHABET.split('');
 const ALPHABET_RANGE  = ALPHABET.length;
+const BACON           = ['AAAAA','AAAAB','AAABA','AAABB','AABAA','AABAB','AABBA','AABBB','ABAAA','ABAAB','ABABA','ABABB','ABBAA','ABBAB','ABBBA','ABBBB','BAAAA','BAAAB','BAABA','BAABB','BABAA','BABAB','BABBA','BABBB','BBAAA','BBAAB'];
 
 class NotAnIntegerError        extends TypeError {}
 class NotAPositiveIntegerError extends NotAnIntegerError {}
@@ -205,6 +206,7 @@ const areCoprime = (a, b) => {
 module.exports = {
   ALPHABET,
   ALPHABET_LIST,
+  BACON
 
   NotAnIntegerError,
   NotAPositiveIntegerError,
