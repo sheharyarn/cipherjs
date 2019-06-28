@@ -206,7 +206,7 @@ const areCoprime = (a, b) => {
 module.exports = {
   ALPHABET,
   ALPHABET_LIST,
-  BACON
+  BACON,
 
   NotAnIntegerError,
   NotAPositiveIntegerError,
