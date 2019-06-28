@@ -56,6 +56,7 @@ const Bacon = {
         decrypted.push(char);
       }
     }
+    if (!/[A-Z]{1,}/g.test(decrypted.join(''))) return;
     return decrypted.join('');
   }
 };
