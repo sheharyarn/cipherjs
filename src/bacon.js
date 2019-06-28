@@ -12,7 +12,7 @@ const Bacon = {
    */
   encrypt: (plaintext) => {
     const encrypted = [];
-    const split = text.split('');
+    const split = plaintext.split('');
     for (let i = 0; i < split.length; i++) {
       const char = split[i].toUpperCase();
       if (utils.ALPHABET_LIST.includes(char)) {
@@ -34,7 +34,7 @@ const Bacon = {
   decrypt: (ciphertext) => {
     const decrypted = [];
     let charGroup = [];
-    const split = text.split('');
+    const split = ciphertext.replace(/[^A-B\s\W]/g, '').split('');
     for (let i = 0; i < split.length; i++) {
       const char = split[i].toUpperCase();
       if (/[AB]/.test(char)) {
