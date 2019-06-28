@@ -40,11 +40,11 @@ describe('Baconian Cipher', () => {
       (() => Bacon.decrypt(42)).should.throw(TypeError);
     });
     it('returns undefined if no text given, or only numbers/special chars with no letters', () => {
-      Bacon.decrypt('').should.eql(undefined);
-      Bacon.decrypt('4242**').should.eql(undefined);
+      (typeof Bacon.decrypt('')).should.eql('undefined');
+      (typeof Bacon.decrypt('4242**')).should.eql('undefined');
     });
     it('returns undefined when no `letters` given', () => {
-      Bacon.decrypt('AAAA').should.eql(undefined);
+      (typeof Bacon.decrypt('AAAA')).should.eql('undefined');
     });
   });
 });
