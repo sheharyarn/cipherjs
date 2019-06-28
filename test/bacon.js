@@ -19,8 +19,8 @@ describe('Baconian Cipher', () => {
       (() => Bacon.encrypt(90)).should.throw(TypeError);
     });
     it('returns undefined if no text given, or only numbers/special chars with no letters', () => {
-      Bacon.encrypt('').should.eql(undefined);
-      Bacon.encrypt('+42**&#!').should.eql(undefined);
+      (typeof Bacon.encrypt('')).should.eql('undefined');
+      (typeof Bacon.encrypt('+42**&#!')).should.eql('undefined');
     });
     it('retains spaces', () => {
       Bacon.encrypt('HI THERE').should.eql('AABBBABAAA BAABBAABBBAABAABAAABAABAA');
